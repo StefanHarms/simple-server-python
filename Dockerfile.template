@@ -33,6 +33,7 @@ RUN echo "turning_offset = $STEERING_SERVO_OFFSET " > config && \
 #    cd SunFounder_PiCar-S && \
 #    sudo ./install_dependencies
 
+WORKDIR /usr/src/app
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r requirements.txt
 
