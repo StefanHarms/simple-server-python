@@ -14,7 +14,9 @@ COPY requirements.txt requirements.txt
 
 
 RUN apt-get update && \
-    apt-get install git python-smbus -y
+    apt-get install git python-pip -y
+
+RUN pip install smbus dev rpi.gpio
 
 RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar.git && \
     cd SunFounder_PiCar && \
