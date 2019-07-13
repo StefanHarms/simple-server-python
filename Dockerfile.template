@@ -14,11 +14,15 @@ COPY requirements.txt requirements.txt
 
 
 RUN apt-get update && \
-    apt-get install git
+    apt-get install git python-smbus -y
 
-RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar-S.git && \
-    cd SunFounder_PiCar-S && \
-    sudo ./install_dependencies
+RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar.git && \
+    cd SunFounder_PiCar && \
+    python setup.py install 
+
+#RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar-S.git && \
+#    cd SunFounder_PiCar-S && \
+#    sudo ./install_dependencies
 
 # pip install python deps from requirements.txt on the resin.io build server
 RUN pip install -r requirements.txt
