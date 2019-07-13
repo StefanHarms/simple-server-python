@@ -23,7 +23,7 @@ RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar.git && 
     python setup.py install 
 
 WORKDIR SunFounder_PiCar/picar
-RUN echo "turning_offset = $STEERING_SERVO_OFFSET " > picar/config
+RUN echo "turning_offset = $STEERING_SERVO_OFFSET " > SunFounder_PiCar/picar/config
 
 #RUN git clone --recursive https://github.com/sunfounder/SunFounder_PiCar-S.git && \
 #    cd SunFounder_PiCar-S && \
